@@ -37,7 +37,7 @@ func fetch(url string, ch chan<- string) {
 	}
 
 	nbytes, err := io.Copy(ioutil.Discard, resp.Body)
-	resp.Body.Close() // don't leak resources
+	resp.Body.Close() // don't leak resources ddddd
 	if err != nil {
 		ch <- fmt.Sprintf("while reading %s: %v", url, err)
 		return
